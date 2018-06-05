@@ -1,0 +1,51 @@
+{
+  "name": "loopback-jest",
+  "version": "2.4.0",
+  "description": "Jest assertions for loopback",
+  "main": "dist/loopback-jest.js",
+  "scripts": {
+    "test": "npx eslint . && npx jest --coverage",
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InCuca/loopback-jest.git"
+  },
+  "keywords": [
+    "jest",
+    "jest-plugin",
+    "loopback"
+  ],
+  "author": "Walker at incuca.com.br",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InCuca/loopback-jest/issues"
+  },
+  "homepage": "https://github.com/InCuca/loopback-jest#readme",
+  "dependencies": {
+    "loopback": "^3.19.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "conventional-changelog-cli": "^1.3.21",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^21.15.1",
+    "jest": "^22.4.3",
+    "regenerator-runtime": "^0.11.1",
+    "rollup": "^0.57.1",
+    "rollup-plugin-auto-external": "^1.2.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.3.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
