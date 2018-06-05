@@ -8,3 +8,6 @@ before_script:
 - "./cc-test-reporter before-build"
 after_script:
 - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+env:
+  global:
+    secure: H4HjeyPPyc2FNCpeNiKYUY0n095m4PTAUlVluJzFX6mIMo/tGe3cXLFBO+PG9hxKUhMPt5Y2g8k2z4+PxqhdIT5nv7WqvMLeCLJuSRIhBfSW/IJBmCEgN4LAWbkBkxL425NSGel0YEtur2Kti/JKFjR0bKXsLVUtr4NeDB+X/T4UXZ1rqaU0GYjOIIladYyegNSKT6y+a6NAFZ7kkv8ta2kuvBXFSg1SbdTLA5pAlH2SdnbaU4o/Va4UfaeB2XxZVYBlXYor/GrHNjB5lidPnSCgbm7mZ44cCKCjwEJDEz3YQ9hGbX7EPHkMm4/Oq8KbWoBA8eKulNRSrzF12/8EXHUBttsGZSWJVz1Bmr4/NPZWunGJgaP4GB8CRadX/6thnDL13mjd3WkH/TylVD/DcEFOGOZwHIXPQsKdfp/9vc1NTWE8sJDlnpkia6QwZZIzFNw850mI1E2f9ze88yqbKt2MlhTAr970yuQjagDCBUFUAPE1d1iRhfzx/k1TFMhwdGaLm6Ank3xZbhex2W1Lgl2bek2WrqWvoh/TQ9l/A9dngYqLMShs+/1o0i3y5jZd+m35y6G+Ypec0Q/GLM+BbVB1H27mjcRbKX+9ybQcoFcR18StWGll2drZE1McISW0lBbX5Mf1P8LJ1DkBncvuMBVsqpfAoZ4eVsQMOe/uR8I=
