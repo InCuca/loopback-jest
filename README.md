@@ -4,7 +4,7 @@
 
 
 
-Repository of [jest](https://facebook.github.io/jest/) assertions for loopback
+Repository of [jest](https://facebook.github.io/jest/) matchers for loopback
 
 ## External Dependencies
 
@@ -24,7 +24,7 @@ Find your jest config which is either in your package.json or in a top-level fil
 require('jest-plugins')(['loopback-jest']);
 ```
 
-## Added Assertions
+## Added Matchers
 
 ```js
 expect(modelInstance).to.be.model

@@ -1,7 +1,7 @@
 {
   "name": "loopback-jest",
   "version": "1.0.0",
-  "description": "Jest assertions for loopback",
+  "description": "Jest matchers for loopback",
   "main": "dist/loopback-jest.js",
   "scripts": {
     "test": "npx eslint . && npx jest --coverage",
