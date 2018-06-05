@@ -1,8 +1,7 @@
-import * as properties from './properties';
-import * as methods from './methods';
-import { addItemsOnAssertion } from './helpers/assertion';
+import toBeModel from './to-be-model';
 
-export default function ({ Assertion }) {
-  addItemsOnAssertion(properties, Assertion.addProperty.bind(Assertion));
-  addItemsOnAssertion(methods, Assertion.addMethod.bind(Assertion));
+export default function setup(expect) {
+  expect.extend({
+    toBeModel,
+  });
 }
