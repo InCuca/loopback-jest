@@ -27,5 +27,5 @@ require('jest-plugins')(['loopback-jest']);
 ## Added Matchers
 
 ```js
-expect(modelInstance).toBeModel
+expect(modelInstance).toBeModel()
 ```
