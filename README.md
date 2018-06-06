@@ -26,6 +26,22 @@ require('jest-plugins')(['loopback-jest']);
 
 ## Added Matchers
 
+### .toBeModel()
+
+Expect that a model instance is actually a loopback Model. It uses `instanceof loopback.Model` internally.
+
+Example:
 ```js
-expect(modelInstance).toBeModel()
+  const model = new loopback.Model();
+  expect(model).toBeModel();
+```
+
+### .toHaveRelationship(name, model)
+
+Expect that the model instance has a relationship called name, with a model called model.
+
+Example:
+```js
+  const model = new loopback.Model();
+  expect(model).toHaveRelationship('balls', 'Ball');
 ```
