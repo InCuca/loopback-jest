@@ -1,3 +1,15 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/InCuca/loopback-jest/compare/v1.1.0...v1.2.0) (2018-06-06)
+
+
+### Features
+
+* **to-belongs-to:** add toBelongsTo matcher ([779a82f](https://github.com/InCuca/loopback-jest/commit/779a82f))
+* **to-have-property-of-type:** add toHavePropertyOfType matcher ([a1e8601](https://github.com/InCuca/loopback-jest/commit/a1e8601))
+* **to-have-relationship:** add toHaveRelationship matcher ([5b934dc](https://github.com/InCuca/loopback-jest/commit/5b934dc))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2018-06-05)
 
