@@ -42,8 +42,15 @@ Expect that the model instance has a relationship called name, with a model call
 
 Example:
 ```js
-  const Soccer = loopback.createModel({name: 'Soccer'});
-  Soccer.hasMany(Ball, {as: 'balls'});
+  const Soccer = loopback.createModel({
+    name: 'Soccer',
+    relations: {
+      balls: {
+        type: 'haveMany',
+        model: 'Ball'
+      },
+    },
+  });
   const game = new Soccer();
   expect(game).toHaveRelationship('balls', 'Ball');
 ```
@@ -69,7 +76,15 @@ Expect that the model instance belongs to an `model` with named `relationship`.
 
 Example:
 ```js
-  const Soccer = loopback.createModel({name: 'Soccer'});
+  const Soccer = loopback.createModel({
+    name: 'Soccer',
+    relations: {
+      stadium: {
+        type: 'belongsTo',
+        model: 'Stadium'
+      },
+    },
+  });
   Soccer.belongsTo(Stadium, {as: 'stadium'});
   const game = new Soccer();
   expect(game).toBelongsTo('Stadium', 'stadium');
