@@ -42,8 +42,10 @@ Expect that the model instance has a relationship called name, with a model call
 
 Example:
 ```js
-  const model = new loopback.Model();
-  expect(model).toHaveRelationship('balls', 'Ball');
+  const Soccer = loopback.createModel({name: 'Soccer'});
+  Soccer.hasMany(Ball, {as: 'balls'});
+  const game = new Soccer();
+  expect(game).toHaveRelationship('balls', 'Ball');
 ```
 
 ### .toHavePropertyOfType(name, type)
@@ -52,6 +54,23 @@ Expect that the model instance has a property with `name` and `type`.
 
 Example:
 ```js
-  const model = new loopback.Model();
-  expect(model).toHavePropertyOfType('id', Number);
+  const Soccer = loopback.createModel({
+    name: 'Soccer',
+    properties: {id: 'number'}
+  });
+  const game = new Soccer();
+  expect(game).toHavePropertyOfType('id', Number);
+```
+
+### .toBelongsTo(model, relationship)
+
+Expect that the model instance belongs to an `model` with named `relationship`.
+
+
+Example:
+```js
+  const Soccer = loopback.createModel({name: 'Soccer'});
+  Soccer.belongsTo(Stadium, {as: 'stadium'});
+  const game = new Soccer();
+  expect(game).toBelongsTo('Stadium', 'stadium');
 ```
