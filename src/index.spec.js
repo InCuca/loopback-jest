@@ -1,4 +1,3 @@
-// import {getMatchers} from 'jest';
 import loopbackJest from '.';
 
 loopbackJest(expect);
@@ -12,5 +11,9 @@ describe('loopback-jest', () => {
 
   it('install toHaveRelationship', () => {
     expect(assertion.toHaveRelationship).toBeDefined();
+  });
+
+  it('install toHavePropertyOfType', () => {
+    expect(assertion.toHavePropertyOfType).toBeDefined();
   });
 });
