@@ -45,3 +45,13 @@ Example:
   const model = new loopback.Model();
   expect(model).toHaveRelationship('balls', 'Ball');
 ```
+
+### .toHavePropertyOfType(name, type)
+
+Expect that the model instance has a property with `name` and `type`.
+
+Example:
+```js
+  const model = new loopback.Model();
+  expect(model).toHavePropertyOfType('id', Number);
+```
