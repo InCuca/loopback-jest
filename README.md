@@ -69,9 +69,9 @@ Example:
   expect(game).toHavePropertyOfType('id', Number);
 ```
 
-### .toBelongsTo(model, relationship)
+### .toBelongsTo(model, relationship, [foreignKey])
 
-Expect that the model instance belongs to an `model` with named `relationship`.
+Expect that the model instance belongs to an `model` with named `relationship`, optionally with `foreignKey`.
 
 
 Example:
@@ -81,11 +81,12 @@ Example:
     relations: {
       stadium: {
         type: 'belongsTo',
-        model: 'Stadium'
+        model: 'Stadium',
+        foreignKey: 'stadiumId',
       },
     },
   });
   Soccer.belongsTo(Stadium, {as: 'stadium'});
   const game = new Soccer();
-  expect(game).toBelongsTo('Stadium', 'stadium');
+  expect(game).toBelongsTo('Stadium', 'stadium', 'stadiumId');
 ```
