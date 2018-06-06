@@ -16,4 +16,8 @@ describe('loopback-jest', () => {
   it('install toHavePropertyOfType', () => {
     expect(assertion.toHavePropertyOfType).toBeDefined();
   });
+
+  it('install toBelongsTo matcher', () => {
+    expect(assertion.toBelongsTo).toBeDefined();
+  });
 });
