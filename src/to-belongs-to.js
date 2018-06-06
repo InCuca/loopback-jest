@@ -1,8 +1,6 @@
-
-export default function toBelongsTo(received, model, relationship, foreignKey) {
-  if (!model) throw Error('missing model name');
-  const { settings } = received.definition;
-  const getMsg = pass => () => {
+function getMessage(...args) {
+  const [pass, model, relationship, foreignKey] = args;
+  return () => {
     let msg = 'expected received model';
     msg += pass ? ' to not' : ' to';
     msg += ` belongs to ${model}`;
@@ -10,6 +8,12 @@ export default function toBelongsTo(received, model, relationship, foreignKey) {
     if (foreignKey) msg += ` and ${foreignKey} foreignKey`;
     return msg;
   };
+}
+
+export default function toBelongsTo(received, ...args) {
+  const [model, relationship, foreignKey] = args;
+  if (!model) throw Error('missing model name');
+  const { settings } = received.definition;
   let pass = true;
   try {
     const expected = {
@@ -18,7 +22,7 @@ export default function toBelongsTo(received, model, relationship, foreignKey) {
     if (foreignKey) expected[relationship].foreignKey = foreignKey;
     expect(settings.relations).toMatchObject(expected);
   } catch (err) {
-    pass = !pass;
+    pass = false;
   }
-  return { pass, message: getMsg(pass) };
+  return { pass, message: getMessage(pass, ...args) };
 }
