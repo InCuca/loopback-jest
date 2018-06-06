@@ -1,10 +1,11 @@
+function toString(thing) {
+  if (typeof thing === 'object') return thing.type.name;
+  if (typeof thing === 'function') return thing.name;
+  if (typeof thing === 'string') return thing;
+  return '';
+}
+
 export default function toHavePropertyOfType(received, prop, type) {
-  const toString = (thing) => {
-    if (typeof thing === 'object') return thing.type.name;
-    if (typeof thing === 'function') return thing.name;
-    if (typeof thing === 'string') return thing;
-    return '';
-  };
   const passMsg = () => `expected model to not have property ${prop} of ${toString(type)} type`;
   const failMsg = () => `expected model to have property ${prop} of ${toString(type)} type`;
   const getReturn = pass => ({
