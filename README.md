@@ -26,6 +26,67 @@ require('jest-plugins')(['loopback-jest']);
 
 ## Added Matchers
 
+### .toBeModel()
+
+Expect that a model instance is actually a loopback Model. It uses `instanceof loopback.Model` internally.
+
+Example:
 ```js
-expect(modelInstance).toBeModel()
+  const model = new loopback.Model();
+  expect(model).toBeModel();
+```
+
+### .toHaveRelationship(name, model)
+
+Expect that the model instance has a relationship called name, with a model called model.
+
+Example:
+```js
+  const Soccer = loopback.createModel({
+    name: 'Soccer',
+    relations: {
+      balls: {
+        type: 'haveMany',
+        model: 'Ball'
+      },
+    },
+  });
+  const game = new Soccer();
+  expect(game).toHaveRelationship('balls', 'Ball');
+```
+
+### .toHavePropertyOfType(name, type)
+
+Expect that the model instance has a property with `name` and `type`.
+
+Example:
+```js
+  const Soccer = loopback.createModel({
+    name: 'Soccer',
+    properties: {id: 'number'}
+  });
+  const game = new Soccer();
+  expect(game).toHavePropertyOfType('id', Number);
+```
+
+### .toBelongsTo(model, relationship, [foreignKey])
+
+Expect that the model instance belongs to an `model` with named `relationship`, optionally with `foreignKey`.
+
+
+Example:
+```js
+  const Soccer = loopback.createModel({
+    name: 'Soccer',
+    relations: {
+      stadium: {
+        type: 'belongsTo',
+        model: 'Stadium',
+        foreignKey: 'stadiumId',
+      },
+    },
+  });
+  Soccer.belongsTo(Stadium, {as: 'stadium'});
+  const game = new Soccer();
+  expect(game).toBelongsTo('Stadium', 'stadium', 'stadiumId');
 ```

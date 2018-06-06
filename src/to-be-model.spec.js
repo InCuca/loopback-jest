@@ -2,15 +2,15 @@ import loopback from 'loopback';
 import toBeModel from './to-be-model';
 
 describe('toBeModel', () => {
-  let mockedModel;
+  let model;
 
   beforeAll(() => {
-    mockedModel = new loopback.Model();
+    model = new loopback.Model();
     expect.extend({ toBeModel });
   });
 
   it('do assert is a model', () => {
-    expect(mockedModel).toBeModel();
+    expect(model).toBeModel();
   });
 
   it('assert is not a model', () => {
@@ -22,6 +22,6 @@ describe('toBeModel', () => {
   });
 
   it('throw is a model', () => {
-    expect(() => expect(mockedModel).not.toBeModel()).toThrow();
+    expect(() => expect(model).not.toBeModel()).toThrow();
   });
 });
