@@ -24,4 +24,8 @@ describe('loopback-jest', () => {
   it('install toHaveOne matcher', () => {
     expect(assertion.toHaveOne).toBeDefined();
   });
+
+  it('install toHaveMany matcher', () => {
+    expect(assertion.toHaveMany).toBeDefined();
+  });
 });
