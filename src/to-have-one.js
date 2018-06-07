@@ -1,14 +1,4 @@
-function getMessage(...args) {
-  const [pass, model, relationship, foreignKey] = args;
-  return () => {
-    let msg = 'expected received model';
-    msg += pass ? ' to not' : ' to';
-    msg += ` has one ${model}`;
-    if (relationship) msg += ` through ${relationship} relationship`;
-    if (foreignKey) msg += ` and ${foreignKey} foreignKey`;
-    return msg;
-  };
-}
+import getMessage from './get-message';
 
 export default function toHaveOne(received, ...args) {
   const [model, relationship, foreignKey] = args;
