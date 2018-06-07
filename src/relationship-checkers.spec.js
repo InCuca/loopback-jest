@@ -6,8 +6,8 @@ describe('isRelationship', () => {
     expect(() => isRelationship()).toThrow('missing relationship type');
   });
 
-  it('throws if there is not model settings', () => {
-    expect(() => isRelationship('hasMany')).toThrow('missing model settings');
+  it('throws if there is not received model', () => {
+    expect(() => isRelationship('hasMany')).toThrow('missing received model');
   });
 
   it('throws if there is not model name', () => {
@@ -19,20 +19,18 @@ describe('isRelationship', () => {
   });
 
   it('returns false if settings relations do not match expected', () => {
-    const relations = {};
     expect(isRelationship(
       'hasMany',
-      { relations },
+      { definition: { settings: { relations: {} } } },
       'Model',
       'balls',
     )).toBeFalsy();
   });
 
   it('returns false if settings relations do not match expected with foreignKey', () => {
-    const relations = {};
     expect(isRelationship(
       'hasMany',
-      { relations },
+      { definition: { settings: { relations: {} } } },
       'Model',
       'balls',
       'ballId',
@@ -48,7 +46,7 @@ describe('isRelationship', () => {
     };
     expect(isRelationship(
       'hasMany',
-      { relations },
+      { definition: { settings: { relations } } },
       'Model',
       'balls',
     )).toBeTruthy();
@@ -64,7 +62,7 @@ describe('isRelationship', () => {
     };
     expect(isRelationship(
       'hasMany',
-      { relations },
+      { definition: { settings: { relations } } },
       'Model',
       'balls',
       'ballId',
