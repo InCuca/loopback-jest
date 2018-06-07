@@ -14,7 +14,7 @@ describe('toHaveOne', () => {
           balls: {
             type: 'hasOne',
             model: 'Ball',
-            foreignKey: 'ballId',
+            foreignKey: 'mockedModelId',
           },
         },
       },
@@ -51,9 +51,11 @@ describe('toHaveOne', () => {
 
   it('pass in negative assertion', () => {
     expect(mockedModel).not.toHaveOne('Tree', 'trees');
+    expect(mockedModel).not.toHaveOne('Tree', 'trees', 'treeid');
   });
 
   it('pass in positive assertion', () => {
     expect(mockedModel).toHaveOne('Ball', 'balls');
+    expect(mockedModel).toHaveOne('Ball', 'balls', 'mockedModelId');
   });
 });

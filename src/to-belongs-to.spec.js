@@ -51,9 +51,11 @@ describe('toBelongsTo', () => {
 
   it('pass in negative assertion', () => {
     expect(mockedModel).not.toBelongsTo('Tree', 'trees');
+    expect(mockedModel).not.toBelongsTo('Tree', 'trees', 'treesId');
   });
 
   it('pass in positive assertion', () => {
     expect(mockedModel).toBelongsTo('Ball', 'balls');
+    expect(mockedModel).toBelongsTo('Ball', 'balls', 'ballId');
   });
 });
