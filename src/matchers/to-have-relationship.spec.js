@@ -1,4 +1,4 @@
-import { createMockedModel } from '../test-utils';
+import { createMockedModel } from '../../test-utils';
 import toHaveRelationship from './to-have-relationship';
 
 

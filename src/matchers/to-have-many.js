@@ -1,13 +1,13 @@
-import getMessage from './get-message';
+import getMessage from '../get-message';
 
-export default function toBelongsTo(received, ...args) {
+export default function toHaveMany(received, ...args) {
   const [model, relationship, foreignKey] = args;
   if (!model) throw Error('missing model name');
   const { settings } = received.definition;
   let pass = true;
   try {
     const expected = {
-      [relationship]: { type: 'belongsTo', model },
+      [relationship]: { type: 'hasMany', model },
     };
     if (foreignKey) expected[relationship].foreignKey = foreignKey;
     expect(settings.relations).toMatchObject(expected);

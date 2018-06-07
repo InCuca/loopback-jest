@@ -1,5 +1,5 @@
 import loopback from 'loopback';
-import { createMockedModel } from '../test-utils';
+import { createMockedModel } from '../../test-utils';
 
 import toInherits from './to-inherits';
 

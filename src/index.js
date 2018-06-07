@@ -1,10 +1,10 @@
-import toBeModel from './to-be-model';
-import toHaveRelationship from './to-have-relationship';
-import toHavePropertyOfType from './to-have-property-of-type';
-import toBelongsTo from './to-belongs-to';
-import toHaveOne from './to-have-one';
-import toHaveMany from './to-have-many';
-import toInherits from './to-inherits';
+import toBeModel from './matchers/to-be-model';
+import toHaveRelationship from './matchers/to-have-relationship';
+import toHavePropertyOfType from './matchers/to-have-property-of-type';
+import toBelongsTo from './matchers/to-belongs-to';
+import toHaveOne from './matchers/to-have-one';
+import toHaveMany from './matchers/to-have-many';
+import toInherits from './matchers/to-inherits';
 
 export default function setup(expect) {
   expect.extend({
