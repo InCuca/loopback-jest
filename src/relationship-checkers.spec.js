@@ -84,7 +84,7 @@ describe('relationship-checker exports', () => {
     // if (checker === 'isRelationship') return;
 
     // it.skip('calls isRelationship with type', () => {
-    //   checkers[checker]();
+    //   checkers[checker](); // throws because isRelationship is not mocked
     //   expect(checker.isRelationship).toBeCalledWith(expect.any(String));
     // });
   });
