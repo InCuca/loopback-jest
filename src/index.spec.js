@@ -28,4 +28,8 @@ describe('loopback-jest', () => {
   it('install toHaveMany matcher', () => {
     expect(assertion.toHaveMany).toBeDefined();
   });
+
+  it('install toInherits matcher', () => {
+    expect(assertion.toInherits).toBeDefined();
+  });
 });
