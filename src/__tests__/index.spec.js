@@ -1,4 +1,4 @@
-import loopbackJest from '.';
+import loopbackJest from '../';
 
 loopbackJest(expect);
 

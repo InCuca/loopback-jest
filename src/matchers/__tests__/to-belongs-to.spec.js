@@ -1,20 +1,20 @@
-import { createMockedModel } from '../../test-utils';
+import { createMockedModel } from '../../../test-utils';
 
-import toHaveOne from './to-have-one';
+import toBelongsTo from '../to-belongs-to';
 
-describe('toHaveOne', () => {
+describe('toBelongsTo', () => {
   let mockedModel;
 
   beforeEach(() => {
-    expect.extend({ toHaveOne });
+    expect.extend({ toBelongsTo });
     mockedModel = createMockedModel(
       'MockedModel',
       {
         relations: {
           balls: {
-            type: 'hasOne',
+            type: 'belongsTo',
             model: 'Ball',
-            foreignKey: 'mockedModelId',
+            foreignKey: 'ballId',
           },
         },
       },
@@ -22,7 +22,7 @@ describe('toHaveOne', () => {
   });
 
   it('throws if missing minimum arguments', () => {
-    expect(() => expect(mockedModel).toHaveOne()).toThrow();
+    expect(() => expect(mockedModel).toBelongsTo()).toThrow();
   });
 
   it('throws if the model does not have matching relationship type', () => {
@@ -34,28 +34,28 @@ describe('toHaveOne', () => {
         },
       },
     });
-    expect(() => expect(ErrModel).toHaveOne('Ball', 'balls')).toThrow();
+    expect(() => expect(ErrModel).toBelongsTo('Ball', 'balls')).toThrow();
   });
 
   it('throws if the model does not have matching model name', () => {
-    expect(() => expect(mockedModel).toHaveOne('Tree', 'balls')).toThrow();
+    expect(() => expect(mockedModel).toBelongsTo('Tree', 'balls')).toThrow();
   });
 
   it('throws if the model does not have matching relationship', () => {
-    expect(() => expect(mockedModel).toHaveOne('Ball', 'trees')).toThrow();
+    expect(() => expect(mockedModel).toBelongsTo('Ball', 'trees')).toThrow();
   });
 
   it('throws if the model does not have matching foreignKey', () => {
-    expect(() => expect(mockedModel).toHaveOne('Ball', 'balls', 'treeId')).toThrow();
+    expect(() => expect(mockedModel).toBelongsTo('Ball', 'balls', 'treeId')).toThrow();
   });
 
   it('pass in negative assertion', () => {
-    expect(mockedModel).not.toHaveOne('Tree', 'trees');
-    expect(mockedModel).not.toHaveOne('Tree', 'trees', 'treeid');
+    expect(mockedModel).not.toBelongsTo('Tree', 'trees');
+    expect(mockedModel).not.toBelongsTo('Tree', 'trees', 'treesId');
   });
 
   it('pass in positive assertion', () => {
-    expect(mockedModel).toHaveOne('Ball', 'balls');
-    expect(mockedModel).toHaveOne('Ball', 'balls', 'mockedModelId');
+    expect(mockedModel).toBelongsTo('Ball', 'balls');
+    expect(mockedModel).toBelongsTo('Ball', 'balls', 'ballId');
   });
 });

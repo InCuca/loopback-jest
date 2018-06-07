@@ -1,4 +1,4 @@
-import isRelationship from './is-relationship';
+import isRelationship from '../is-relationship';
 
 describe('isRelationship', () => {
   it('throws if there is not relationship type', () => {

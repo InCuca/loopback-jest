@@ -1,5 +1,5 @@
-import { createMockedModel } from '../../test-utils';
-import toHavePropertyOfType from './to-have-property-of-type';
+import { createMockedModel } from '../../../test-utils';
+import toHavePropertyOfType from '../to-have-property-of-type';
 
 describe('toHavePropertyOfType', () => {
   let mockedModel;

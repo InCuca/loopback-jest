@@ -1,9 +1,9 @@
-import isRelationship from './is-relationship';
-import getMessage from './get-message';
-import getRelationMatcher from './get-relation-matcher';
+import isRelationship from '../is-relationship';
+import getMessage from '../get-message';
+import getRelationMatcher from '../get-relation-matcher';
 
-jest.mock('./is-relationship');
-jest.mock('./get-message');
+jest.mock('../is-relationship');
+jest.mock('../get-message');
 
 describe('get-relation-matcher high order', () => {
   it('calls isRelationship with type and args', () => {

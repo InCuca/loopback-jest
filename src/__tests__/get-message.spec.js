@@ -1,4 +1,4 @@
-import getMessage from './get-message';
+import getMessage from '../get-message';
 
 describe('getMessage', () => {
   it('returns correct message for has many relationship', () => {

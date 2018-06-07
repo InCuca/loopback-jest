@@ -1,6 +1,6 @@
-import { createMockedModel } from '../../test-utils';
+import { createMockedModel } from '../../../test-utils';
 
-import toHaveMany from './to-have-many';
+import toHaveMany from '../to-have-many';
 
 describe('toHaveMany', () => {
   let mockedModel;
