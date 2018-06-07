@@ -80,6 +80,10 @@ describe('relationship-checker exports', () => {
   it('exports isBelongsTo', () => {
     expect(checkers.isBelongsTo).toBeInstanceOf(Function);
   });
+
+  it('exports isHaveOne', () => {
+    expect(checkers.isHaveOne).toBeInstanceOf(Function);
+  });
   //  TODO: Find some way to implement these tests
   /* eslint-disable global-require */
   // const checkers = require('./relationship-checkers');

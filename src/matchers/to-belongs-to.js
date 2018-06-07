@@ -6,5 +6,5 @@ export default function toBelongsTo(received, ...args) {
     received.definition.settings,
     ...args,
   );
-  return { pass, message: getMessage(pass, ...args) };
+  return { pass, message: getMessage(pass, 'belongs to', ...args) };
 }

@@ -6,5 +6,5 @@ export default function toHaveMany(received, ...args) {
     received.definition.settings,
     ...args,
   );
-  return { pass, message: getMessage(pass, ...args) };
+  return { pass, message: getMessage(pass, 'have many', ...args) };
 }

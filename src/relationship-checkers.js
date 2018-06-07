@@ -29,3 +29,7 @@ export function isHasMany(...args) {
 export function isBelongsTo(...args) {
   return isRelationship('belongsTo', ...args);
 }
+
+export function isHaveOne(...args) {
+  return isRelationship('haveOne', ...args);
+}
