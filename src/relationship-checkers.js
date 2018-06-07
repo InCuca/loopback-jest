@@ -1,4 +1,5 @@
-export function isRelationship(type, settings, model, relationship, foreignKey) {
+export function isRelationship(...args) {
+  const [type, settings, model, relationship, foreignKey] = args;
   if (!type) throw Error('missing relationship type');
   if (!settings) throw Error('missing model settings');
   if (!model) throw Error('missing model name');
