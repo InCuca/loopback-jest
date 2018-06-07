@@ -46,7 +46,7 @@ Example:
     name: 'Soccer',
     relations: {
       balls: {
-        type: 'haveMany',
+        type: 'hasMany',
         model: 'Ball'
       },
     },
@@ -88,4 +88,25 @@ Example:
   });
   const game = new Soccer();
   expect(game).toBelongsTo('Stadium', 'stadium', 'stadiumId');
+```
+
+### .toHaveOne(model, relationship, [foreignKey])
+
+Expect that the model instance has one `model` with named `relationship`, and optionally with `foreignKey`.
+
+
+Example:
+```js
+  const Soccer = loopback.createModel({
+    name: 'Soccer',
+    relations: {
+      winner: {
+        type: 'hasOne',
+        model: 'Winner',
+        foreignKey: 'winnerId',
+      },
+    },
+  });
+  const game = new Soccer();
+  expect(game).toHaveOne('Winner', 'winner', 'winnerId');
 ```
