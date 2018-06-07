@@ -131,3 +131,19 @@ Example:
   const game = new Soccer();
   expect(game).toHaveMany('Player', 'players', 'soccerId');
 ```
+
+### .toInherits(BaseModel)
+
+Expect that the Model class inherits BaseModel.
+
+Example:
+```js
+  const Game = loopback.createModel({
+    name: 'Game',
+  });
+  const Soccer = loopback.createModel({
+    name: 'Soccer',
+    base: Game,
+  });
+  expect(Soccer).toInherits(Game);
+```
