@@ -1,3 +1,25 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/InCuca/loopback-jest/compare/v1.2.0...v1.3.0) (2018-06-07)
+
+
+### Bug Fixes
+
+* **create-mocked-model:** add missing tests ([7385af1](https://github.com/InCuca/loopback-jest/commit/7385af1))
+* **get-relation-matcher:** add return evaluation ([ab5b242](https://github.com/InCuca/loopback-jest/commit/ab5b242))
+* **getMessage:** fix missing argument ([9096ff7](https://github.com/InCuca/loopback-jest/commit/9096ff7))
+* **matchers:** add missing assertion ([6daca1a](https://github.com/InCuca/loopback-jest/commit/6daca1a))
+* **relationship-checker:** add missing tests ([c703b2c](https://github.com/InCuca/loopback-jest/commit/c703b2c))
+* **relationship-checkers:** fix wrong relation type ([ac11de5](https://github.com/InCuca/loopback-jest/commit/ac11de5))
+
+
+### Features
+
+* **to-have-many:** add toHaveMany relationship ([b644f0a](https://github.com/InCuca/loopback-jest/commit/b644f0a))
+* **to-have-one:** add toHaveOne relationship ([cbecd23](https://github.com/InCuca/loopback-jest/commit/cbecd23))
+* **to-inherits:** add toInherits matcher ([849730a](https://github.com/InCuca/loopback-jest/commit/849730a))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/InCuca/loopback-jest/compare/v1.1.0...v1.2.0) (2018-06-06)
 
