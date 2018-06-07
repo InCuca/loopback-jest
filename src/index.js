@@ -2,6 +2,7 @@ import toBeModel from './to-be-model';
 import toHaveRelationship from './to-have-relationship';
 import toHavePropertyOfType from './to-have-property-of-type';
 import toBelongsTo from './to-belongs-to';
+import toHaveOne from './to-have-one';
 
 export default function setup(expect) {
   expect.extend({
@@ -9,5 +10,6 @@ export default function setup(expect) {
     toHaveRelationship,
     toHavePropertyOfType,
     toBelongsTo,
+    toHaveOne,
   });
 }

@@ -20,4 +20,8 @@ describe('loopback-jest', () => {
   it('install toBelongsTo matcher', () => {
     expect(assertion.toBelongsTo).toBeDefined();
   });
+
+  it('install toHaveOne matcher', () => {
+    expect(assertion.toHaveOne).toBeDefined();
+  });
 });
