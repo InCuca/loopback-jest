@@ -31,5 +31,5 @@ export function isBelongsTo(...args) {
 }
 
 export function isHaveOne(...args) {
-  return isRelationship('haveOne', ...args);
+  return isRelationship('hasOne', ...args);
 }
