@@ -23,4 +23,17 @@ describe('get-relation-matcher high order', () => {
       ...args,
     );
   });
+
+  it('returns jest expect object', () => {
+    const args = [1, 2, 3];
+    const pass = true;
+    const message = () => {};
+    isRelationship.mockReturnValue(pass);
+    getMessage.mockReturnValue(message);
+    const evaluated = getRelationMatcher('fooMsg', 'foo')(...args);
+    expect(evaluated).toMatchObject({
+      pass,
+      message,
+    });
+  });
 });
