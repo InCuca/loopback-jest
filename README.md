@@ -110,3 +110,24 @@ Example:
   const game = new Soccer();
   expect(game).toHaveOne('Winner', 'winner', 'winnerId');
 ```
+
+### .toHaveMany(model, relationship, [foreignKey])
+
+Expect that the model instance have many `model`s with named `relationship`, and optionally with `foreignKey`.
+
+
+Example:
+```js
+  const Soccer = loopback.createModel({
+    name: 'Soccer',
+    relations: {
+      players: {
+        type: 'hasMany',
+        model: 'Player',
+        foreignKey: 'soccerId',
+      },
+    },
+  });
+  const game = new Soccer();
+  expect(game).toHaveMany('Player', 'players', 'soccerId');
+```
