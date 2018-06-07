@@ -1,6 +1,7 @@
-import { isRelationship } from './relationship-checkers';
+import * as checkers from './relationship-checkers';
 
-describe('isRelationship', () => {
+describe('isRelationship and exported shortcuts', () => {
+  const { isRelationship } = checkers;
   it('throws if there is not relationship type', () => {
     expect(() => isRelationship()).toThrow('missing relationship type');
   });
@@ -63,6 +64,12 @@ describe('isRelationship', () => {
     };
     expect(isRelationship(
       'hasMany',
+      { relations },
+      'Model',
+      'balls',
+      'ballId',
+    )).toBeTruthy();
+    expect(checkers.isHasMany(
       { relations },
       'Model',
       'balls',
