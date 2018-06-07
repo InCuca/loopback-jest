@@ -86,7 +86,6 @@ Example:
       },
     },
   });
-  Soccer.belongsTo(Stadium, {as: 'stadium'});
   const game = new Soccer();
   expect(game).toBelongsTo('Stadium', 'stadium', 'stadiumId');
 ```
