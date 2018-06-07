@@ -1,7 +1,6 @@
-import * as checkers from './relationship-checkers';
+import { isRelationship } from './relationship-checkers';
 
-describe('isRelationship and exported shortcuts', () => {
-  const { isRelationship } = checkers;
+describe('isRelationship', () => {
   it('throws if there is not relationship type', () => {
     expect(() => isRelationship()).toThrow('missing relationship type');
   });
@@ -69,11 +68,25 @@ describe('isRelationship and exported shortcuts', () => {
       'balls',
       'ballId',
     )).toBeTruthy();
-    expect(checkers.isHasMany(
-      { relations },
-      'Model',
-      'balls',
-      'ballId',
-    )).toBeTruthy();
   });
 });
+
+describe('relationship-checker exports', () => {
+  /* eslint-disable global-require */
+  const checkers = require('./relationship-checkers');
+  /* eslint-enable */
+  Object.keys(checkers).forEach((checker) => {
+    it(`exports ${checker}`, () => {
+      expect(checkers[checker]).toBeInstanceOf(Function);
+    });
+
+    // TODO: Find some way to test this
+    // if (checker === 'isRelationship') return;
+
+    // it.skip('calls isRelationship with type', () => {
+    //   checkers[checker]();
+    //   expect(checker.isRelationship).toBeCalledWith(expect.any(String));
+    // });
+  });
+});
+
