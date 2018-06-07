@@ -1,7 +1,3 @@
-import getMessage from '../get-message';
-import { isHaveOne } from '../relationship-checkers';
+import getRelationMatcher from '../get-relation-matcher';
 
-export default function toHaveOne(received, ...args) {
-  const pass = isHaveOne(received, ...args);
-  return { pass, message: getMessage(pass, 'have one', ...args) };
-}
+export default getRelationMatcher('have one', 'hasOne');

@@ -1,7 +1,3 @@
-import getMessage from '../get-message';
-import { isBelongsTo } from '../relationship-checkers';
+import getRelationMatcher from '../get-relation-matcher';
 
-export default function toBelongsTo(received, ...args) {
-  const pass = isBelongsTo(received, ...args);
-  return { pass, message: getMessage(pass, 'belongs to', ...args) };
-}
+export default getRelationMatcher('belongs to', 'belongsTo');

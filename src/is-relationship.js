@@ -5,7 +5,7 @@ function validateArgs(args) {
   if (!args[3]) throw Error('missing relationship name');
 }
 
-export function isRelationship(...args) {
+export default function isRelationship(...args) {
   validateArgs(args);
   const [type, received, model, relationship, foreignKey] = args;
   let pass = true;
@@ -20,16 +20,4 @@ export function isRelationship(...args) {
   }
 
   return pass;
-}
-
-export function isHasMany(...args) {
-  return isRelationship('hasMany', ...args);
-}
-
-export function isBelongsTo(...args) {
-  return isRelationship('belongsTo', ...args);
-}
-
-export function isHaveOne(...args) {
-  return isRelationship('hasOne', ...args);
 }

@@ -1,7 +1,3 @@
-import getMessage from '../get-message';
-import { isHasMany } from '../relationship-checkers';
+import getRelationMatcher from '../get-relation-matcher';
 
-export default function toHaveMany(received, ...args) {
-  const pass = isHasMany(received, ...args);
-  return { pass, message: getMessage(pass, 'have many', ...args) };
-}
+export default getRelationMatcher('have many', 'hasMany');
