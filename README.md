@@ -38,7 +38,7 @@ Example:
 
 ### .toHaveRelationship(name, model)
 
-Expect that the model instance has a relationship called name, with a model called model.
+Expect that the model class has a relationship called name, with a model called model.
 
 Example:
 ```js
@@ -51,13 +51,12 @@ Example:
       },
     },
   });
-  const game = new Soccer();
-  expect(game).toHaveRelationship('balls', 'Ball');
+  expect(Soccer).toHaveRelationship('balls', 'Ball');
 ```
 
 ### .toHavePropertyOfType(name, type)
 
-Expect that the model instance has a property with `name` and `type`.
+Expect that the model class has a property with `name` and `type`.
 
 Example:
 ```js
@@ -65,13 +64,12 @@ Example:
     name: 'Soccer',
     properties: {id: 'number'}
   });
-  const game = new Soccer();
-  expect(game).toHavePropertyOfType('id', Number);
+  expect(Soccer).toHavePropertyOfType('id', Number);
 ```
 
 ### .toBelongsTo(model, relationship, [foreignKey])
 
-Expect that the model instance belongs to an `model` with named `relationship`, optionally with `foreignKey`.
+Expect that the model class belongs to an `model` with named `relationship`, optionally with `foreignKey`.
 
 
 Example:
@@ -86,13 +84,12 @@ Example:
       },
     },
   });
-  const game = new Soccer();
-  expect(game).toBelongsTo('Stadium', 'stadium', 'stadiumId');
+  expect(Soccer).toBelongsTo('Stadium', 'stadium', 'stadiumId');
 ```
 
 ### .toHaveOne(model, relationship, [foreignKey])
 
-Expect that the model instance has one `model` with named `relationship`, and optionally with `foreignKey`.
+Expect that the model class has one `model` with named `relationship`, and optionally with `foreignKey`.
 
 
 Example:
@@ -107,13 +104,12 @@ Example:
       },
     },
   });
-  const game = new Soccer();
-  expect(game).toHaveOne('Winner', 'winner', 'winnerId');
+  expect(Soccer).toHaveOne('Winner', 'winner', 'winnerId');
 ```
 
 ### .toHaveMany(model, relationship, [foreignKey])
 
-Expect that the model instance have many `model`s with named `relationship`, and optionally with `foreignKey`.
+Expect that the model class have many `model`s with named `relationship`, and optionally with `foreignKey`.
 
 
 Example:
@@ -128,8 +124,7 @@ Example:
       },
     },
   });
-  const game = new Soccer();
-  expect(game).toHaveMany('Player', 'players', 'soccerId');
+  expect(Soccer).toHaveMany('Player', 'players', 'soccerId');
 ```
 
 ### .toInherits(BaseModel)
