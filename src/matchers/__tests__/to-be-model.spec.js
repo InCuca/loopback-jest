@@ -1,5 +1,5 @@
 import loopback from 'loopback';
-import toBeModel from './to-be-model';
+import toBeModel from '../to-be-model';
 
 describe('toBeModel', () => {
   let model;

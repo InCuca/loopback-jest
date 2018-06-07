@@ -1,5 +1,5 @@
-import { createMockedModel } from '../test-utils';
-import toHaveRelationship from './to-have-relationship';
+import { createMockedModel } from '../../../test-utils';
+import toHaveRelationship from '../to-have-relationship';
 
 
 describe('toHaveRelationship', () => {

@@ -1,4 +1,4 @@
-import loopbackJest from '.';
+import loopbackJest from '../';
 
 loopbackJest(expect);
 
@@ -19,5 +19,17 @@ describe('loopback-jest', () => {
 
   it('install toBelongsTo matcher', () => {
     expect(assertion.toBelongsTo).toBeDefined();
+  });
+
+  it('install toHaveOne matcher', () => {
+    expect(assertion.toHaveOne).toBeDefined();
+  });
+
+  it('install toHaveMany matcher', () => {
+    expect(assertion.toHaveMany).toBeDefined();
+  });
+
+  it('install toInherits matcher', () => {
+    expect(assertion.toInherits).toBeDefined();
   });
 });
