@@ -1,10 +1,13 @@
-export function isRelationship(...args) {
-  const [type, settings, model, relationship, foreignKey] = args;
-  if (!type) throw Error('missing relationship type');
-  if (!settings) throw Error('missing model settings');
-  if (!model) throw Error('missing model name');
-  if (!relationship) throw Error('missing relationship name');
+function validateArgs(args) {
+  if (!args[0]) throw Error('missing relationship type');
+  if (!args[1]) throw Error('missing model settings');
+  if (!args[2]) throw Error('missing model name');
+  if (!args[3]) throw Error('missing relationship name');
+}
 
+export function isRelationship(...args) {
+  validateArgs(args);
+  const [type, settings, model, relationship, foreignKey] = args;
   let pass = true;
   try {
     const expected = {
