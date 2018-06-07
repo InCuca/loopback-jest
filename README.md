@@ -2,8 +2,6 @@
 [![Travis](https://img.shields.io/travis/InCuca/loopback-jest/master.svg)](https://travis-ci.org/InCuca/loopback-jest/branches) [![Code Climate](https://img.shields.io/codeclimate/coverage/InCuca/loopback-jest.svg)](https://codeclimate.com/github/InCuca/loopback-jest/test_coverage)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/InCuca/loopback-jest.svg)](https://codeclimate.com/github/InCuca/loopback-jest/maintainability)
 
-
-
 Repository of [jest](https://facebook.github.io/jest/) matchers for loopback
 
 ## External Dependencies
@@ -18,7 +16,6 @@ yarn add --dev jest-plugins loopback-jest
 ```
 
 Find your jest config which is either in your package.json or in a top-level file called jest.config.js. Add a key setupTestFrameworkScriptFile and point it to another file at the top-level called jest-plugins.js.
-
 
 ```js
 require('jest-plugins')(['loopback-jest']);
@@ -71,7 +68,6 @@ Example:
 
 Expect that the model class belongs to an `model` with named `relationship`, optionally with `foreignKey`.
 
-
 Example:
 ```js
   const Soccer = loopback.createModel({
@@ -90,7 +86,6 @@ Example:
 ### .toHaveOne(model, relationship, [foreignKey])
 
 Expect that the model class has one `model` with named `relationship`, and optionally with `foreignKey`.
-
 
 Example:
 ```js
