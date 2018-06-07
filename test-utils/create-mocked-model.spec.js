@@ -24,4 +24,13 @@ describe('createMockedModel test util', () => {
     const Foo = createMockedModel('Foo', mock);
     expect(Foo.definition.settings.relations).toEqual(mock.relations);
   });
+
+  it('creates a Model only passing name', () => {
+    const Foo = createMockedModel('Foo');
+    expect(Foo.definition.name).toEqual('Foo');
+  });
+
+  it('throws if missing model name', () => {
+    expect(() => createMockedModel()).toThrow();
+  });
 });
